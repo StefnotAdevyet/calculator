@@ -1,5 +1,5 @@
 import './App.css';
-
+import { evalString, removeChar, getOutput, reset } from './calc.js'
 
 
 function App() {
@@ -12,34 +12,34 @@ function App() {
           <table>
            <tbody>
               <tr>
-                <td onclick="">(</td>
-                <td onclick="">)</td>
-                <td onclick="">&lt;-</td>
-                <td onclick="" className="vari">+</td>
+                <td onClick={() => { evalString('(') }}>(</td>
+                <td onClick={() => { evalString(')') }}>)</td>
+                <td onClick={() => { removeChar() }}>&lt;-</td>
+                <td onClick={() => { evalString('+')}} className="vari">+</td>
               </tr>
               <tr>
-                <td onclick="">7</td>
-                <td onclick="">8</td>
-                <td onclick="">9</td>
-                <td onclick="" className="vari">-</td>
+                <td onClick={() => { evalString('7')}}>7</td>
+                <td onClick={() => { evalString('8')}}>8</td>
+                <td onClick={() => { evalString('9')}}>9</td>
+                <td onClick={() => { evalString('-')}} className="vari">-</td>
               </tr>
               <tr>
-                <td onclick="">4</td>
-                <td onclick="">5</td>
-                <td onclick="">6</td>
-                <td onclick="" className="vari">*</td>
+                <td onClick={() => { evalString('4')}}>4</td>
+                <td onClick={() => { evalString('5')}}>5</td>
+                <td onClick={() => { evalString('6')}}>6</td>
+                <td onClick={() => { evalString('*')}} className="vari">*</td>
               </tr>
               <tr>
-                <td onclick="">1</td>
-                <td onclick="">2</td>
-                <td onclick="">3</td>
-                <td onclick="" className="vari">/</td>
+                <td onClick={() => { evalString('1')}}>1</td>
+                <td onClick={() => { evalString('2')}}>2</td>
+                <td onClick={() => { evalString('3')}}>3</td>
+                <td onClick={() => { evalString('/')}} className="vari">/</td>
               </tr>
               <tr>
-                <td onclick="">C</td>
-                <td onclick="">0</td>
-                <td onclick="">.</td>
-                <td onclick="" className="eqlBtn">=</td>
+                <td onClick={() => { reset() }}>C</td>
+                <td onClick={() => { evalString('0')}}>0</td>
+                <td onClick={() => { evalString('.')}}>.</td>
+                <td onClick={() => { getOutput() }} className="eqlBtn">=</td>
               </tr>
             </tbody>
           </table>

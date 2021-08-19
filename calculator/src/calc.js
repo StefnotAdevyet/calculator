@@ -5,7 +5,7 @@ const calcOut = document.getElementById("calcOut");
 
 function evalString(value) {
   calculation += value;
-  userInp.value() = calculation;
+  userInp.value = calculation;
 }
 
 function removeChar() {
@@ -14,13 +14,13 @@ function removeChar() {
 }
 
 function getOutput() {
-  if (calculation.length == 0 || "") {
+  if (calculation.length === 0 || "") {
     alert("Input Required");
     return;
   }
   try {
-    ans = eval(calculation);
-    calcOut.value = ans
+
+    calcOut.value = eval(calculation);
   }
   catch (error) {
     alert("Invalid Input")
@@ -31,4 +31,14 @@ function reset() {
   userInp.value = "";
   calcOut.value = "";
   calculation = "";
+}
+
+module.exports = {
+  calculation,
+  userInp,
+  calcOut,
+  evalString,
+  removeChar,
+  getOutput,
+  reset
 }
