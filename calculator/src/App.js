@@ -1,18 +1,21 @@
 import './App.css';
+import React, { component } from 'react';
 import { evalString, removeChar, getOutput, reset } from './calc.js'
 
 
-function App() {
+class App extends React.Component {
+
+  render () {
   return (
     <div className="App">
       <header className="App-header">
         <div className="container">
-          <input type="text" id="userInp" placeholder="0" disabled/>
-          <input type="text" id="calcOut" placeholder="0" disabled/>
+          <input type="text" id="userInp" value="" placeholder="0" disabled/>
+          <input type="text" id="calcOut" value="" placeholder="0" disabled/>
           <table>
            <tbody>
               <tr>
-                <td onClick={() => { evalString('(') }}>(</td>
+                <td onClick={() => { console.log('test') }}>(</td>
                 <td onClick={() => { evalString(')') }}>)</td>
                 <td onClick={() => { removeChar() }}>&lt;-</td>
                 <td onClick={() => { evalString('+')}} className="vari">+</td>
@@ -47,6 +50,7 @@ function App() {
       </header>
     </div>
   );
+ }
 }
 
 export default App;
